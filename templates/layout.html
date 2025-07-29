@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}整骨院{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: linear-gradient(to right, #f9f9f9, #e0f7fa);
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 5px solid #d0ecff;
+    }
+
+    .site-header h1 {
+      font-size: 2.4em;
+      margin-bottom: 0.3em;
+      color: #00796b;
+    }
+
+    .site-header p {
+      font-size: 1em;
+      color: #555;
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+
+    .main-nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0097a7;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .main-nav a:hover {
+      color: #ff6f91;
+    }
+
+    .site-main {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    section h2 {
+      font-size: 1.6em;
+      margin-top: 0;
+      color: #0097a7;
+    }
+
+    section ul, section ol {
+      padding-left: 20px;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #888;
+      border-top: 1px solid #eee;
+    }
+  </style>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-header" data-aos="fade-down">
+    <h1>〇〇整骨院</h1>
+    <p>あなたの身体に、根本から寄り添う整骨院</p>
+  </header>
+
+  <nav class="main-nav" data-aos="fade-up">
+    <a href="{{ url_for('index') }}#about">ABOUT</a>
+    <a href="{{ url_for('index') }}#achievements">実績</a>
+    <a href="{{ url_for('index') }}#trainer">トレーナー派遣</a>
+    <a href="{{ url_for('index') }}#menu">メニュー</a>
+    <a href="{{ url_for('index') }}#flow">施術の流れ</a>
+    <a href="{{ url_for('index') }}#training">トレーニング</a>
+    <a href="{{ url_for('photos') }}">施設写真</a>
+    <a href="{{ url_for('index') }}#contact">予約・お問い合わせ</a>
+  </nav>
+
+  </nav>
+
+  <main class="site-main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer" data-aos="fade-up">
+    <p>&copy; 2025 〇〇整骨院. All rights reserved.</p>
+  </footer>
+</body>
+</html>

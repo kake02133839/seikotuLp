@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}施設紹介{% endblock %}
+
+{% block content %}
+<section id="photos" data-aos="fade-up">
+  <h2>施設内の様子</h2>
+  <div class="photo-gallery">
+    <img src="{{ url_for('static', filename='img/images.png') }}" alt="施術室">
+    <img src="{{ url_for('static', filename='img/images.png') }}" alt="トレーニングルーム">
+    <img src="{{ url_for('static', filename='img/images.png') }}" alt="エントランス">
+  </div>
+  <p style="text-align: center; margin-top: 40px;">
+  <a href="{{ url_for('index') }}" style="color: #0077cc;">トップページに戻る</a>
+</p>
+
+</section>
+{% endblock %}
